@@ -7,6 +7,12 @@ The parametric tests included in our approach are: T-Test (Paired or UnPaired) a
 
 The non-parametric tests included in our approach are: Kolmogorov-Smirnov Tests, Wilcoxon signed-rank test, Cramer-von Mises Statistic Test, Anderson–Darling Test and the Chi-Squared Test.
 
+
+## Requirements
+The code is written in the R Programming Language. There are two packages required to run the code. These are tidyverse and goftest.
+
+## Directory Structure
+
 The code for the software is located in the src directory.
 The output directory provides examples of the results of running test_distributions.R and test_distributions_of_variables_from_multiple_simulation_runs.R
 

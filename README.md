@@ -6,3 +6,10 @@ Parametric tests are those that make assumptions about the parameters of the pop
 The parametric tests included in our approach are: T-Test (Paired or UnPaired) and One-Way ANOVA.
 
 The non-parametric tests included in our approach are: Kolmogorov-Smirnov Tests, Wilcoxon signed-rank test, Cramer-von Mises Statistic Test, Anderson–Darling Test and the Chi-Squared Test.
+
+## Usage
+test_distribution.R demonstrates how to use the software. 
+
+The user is required to provide two samples of numeric data and indicate if the two samples are "paired".
+
+The software provides back the p-value of running all the parametric and non-parametric tests on the data.

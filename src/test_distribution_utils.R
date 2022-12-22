@@ -1,6 +1,23 @@
 library(tidyverse)
 library(goftest)
 
+
+one_way_anova_test <- function(x, y, paired)
+{
+  if (paired)
+  {
+    res_aov = aov(x ~ y)
+    summary_result_of_test = summary(res_aov)
+    p_value_data = summary_result_of_test[[1]]$'Pr(>F)'
+    f_value_data =  summary_result_of_test[[1]]$'F value'
+    to_return = tibble("f_value" = f_value_data[1], "p_value"= p_value_data[1])
+  } else
+  {
+    to_return = tibble("correlation" = NA, "p_value"= NA)
+  }
+  return(to_return)
+}
+
 two_sample_cvm_test <- function(x, y) {
   
   # Sample sizes
@@ -75,6 +92,16 @@ test_if_distributions_are_equal = function(sample1, sample2, sample_data_pairedn
   t_test_types = c(t_test_equal_type, t_test_less_than_type, t_test_greater_than_type)
   t_test_descriptions = c(t_test_equal_description, t_test_less_than_description, t_test_greater_than_description)
   t_test_results = c(t_test_equal_result$p.value, t_test_less_than_result$p.value, t_test_greater_than_result$p.value)
+  
+  one_way_anova_equal_name = "One-way ANOVA Test (requires paired data)"
+  one_way_anova_equal_type = "Sample1 = Sample 2"
+  one_way_anova_equal_description = "Is there statistical evidence that the associated population means of sample 1 and sample2 are significantly different?"
+  one_way_anova_equal_result <- one_way_anova_test(sample1_tbl$n, sample2_tbl$n, is_the_sample_data_paired)
+  
+  one_way_anova_test_names = one_way_anova_equal_name
+  one_way_anova_test_types = one_way_anova_equal_type
+  one_way_anova_test_descriptions = one_way_anova_equal_description
+  one_way_anova_test_results = one_way_anova_equal_result$p_value
   
   ## 
   ##  Two-sample paired Wilcoxon signed-rank test (i.e. non-parametric t test)
@@ -176,13 +203,15 @@ test_if_distributions_are_equal = function(sample1, sample2, sample_data_pairedn
   chi_squared_test_results = c(chi_squared_test_results$p.value)
   
   # pretty results tbl
-  test_names = c(t_test_names, wilcox_test_names, ks_test_names, cvm_test_names, ad_test_names, chi_squared_test_names)
-  test_types = c(t_test_types, wilcox_test_types, ks_test_types, cvm_test_types, ad_test_types, chi_squared_test_types)
-  test_descriptions = c(t_test_descriptions, wilcox_test_descriptions, 
+  test_names = c(t_test_names, one_way_anova_test_names, wilcox_test_names, ks_test_names, cvm_test_names, ad_test_names, chi_squared_test_names)
+  test_types = c(t_test_types, one_way_anova_test_types, wilcox_test_types, ks_test_types, cvm_test_types, ad_test_types, chi_squared_test_types)
+  test_descriptions = c(t_test_descriptions, one_way_anova_test_descriptions, wilcox_test_descriptions, 
                         ks_test_descriptions, cvm_test_descriptions, 
                         ad_test_descriptions, chi_squared_test_descriptions)
   
-  test_p_values = c(t_test_results, wilcox_test_results, ks_test_results, cvm_test_results, ad_test_results, chi_squared_test_results)
+  test_p_values = c(t_test_results, one_way_anova_test_results, 
+                    wilcox_test_results, ks_test_results, cvm_test_results, 
+                    ad_test_results, chi_squared_test_results)
   
   results_tbl = tibble(test_name=test_names, test_type=test_types, test_description=test_descriptions, test_p_value=test_p_values)
   

@@ -1,0 +1,14 @@
+test_name,test_type,test_description,test_p_value
+Two-sample t-test,Sample1 = Sample 2,Do sample1 and sample2 have means such that the difference between them is statistically insignificant?,0.48582093332586374
+Two-sample t-test,Sample1 < Sample 2,Does sample1 have a mean that is statistically significantly less than the mean of sample2?,0.7570895333370682
+Two-sample t-test,Sample1 > Sample 2,Does sample1 have a mean that is statistically significantly greater than the mean of sample2?,0.24291046666293187
+One-way ANOVA Test (requires paired data),Sample1 = Sample 2,Is there statistical evidence that the associated population means of sample 1 and sample2 are significantly different?,NA
+Two-sample Wilcoxon signed-rank test (i.e. non-parametric t test),Sample1 = Sample 2,Is any shift in the main masses of the probability of sample1 and sample2 statistically insignificant,0.21849239517405564
+Two-sample Wilcoxon signed-rank test (i.e. non-parametric t test),Sample1 < Sample 2,Is the shift in the main mass of the probability of sample1 from sample2 greater than 0 and statistically significant,0.8920382356301494
+Two-sample Wilcoxon signed-rank test (i.e. non-parametric t test),Sample1 > Sample 2,Is the shift in the main mass of the probability of sample1 from sample2 greater than 0 and statistically significant,0.10924619758702782
+Two-sample Kolmogorov-Smirnov Tests,Sample1 = Sample 2,Do sample1 and sample2 have the same asymptotic cdf using the maximum signed distance?,0.06779471096995882
+Two-sample Kolmogorov-Smirnov Tests,Sample1 < Sample 2,Does the cdf of sample1 lie below the cdf of sample2 using the maximum signed distance?,0.03404745473459933
+Two-sample Kolmogorov-Smirnov Tests,Sample1 > Sample 2,Does the cdf of sample1 lie above the cdf of sample2 using the maximum signed distance?,0.08892161745938634
+Two-sample Cramer-von Mises Statistic Test,Sample1 = Sample 2,Do sample1 and sample2 have the same asymptotic cdf using quadratic differences?,0.022204651091822014
+Two-sample Anderson–Darling test,Sample1 = Sample 2,Do sample1 and sample2 have the same asymptotic cdf using weighted quadratic differences?,0.008854294801035945
+Two-sample Chi–Squared test,Sample 1 = Sample 2,Are there no statistically significant difference in the distribution of the discrete data in Sample 1 and Sample 2?,4.997501249375312e-4

@@ -178,7 +178,10 @@ test_if_distributions_are_equal = function(sample1, sample2, sample_data_pairedn
   # pretty results tbl
   test_names = c(t_test_names, wilcox_test_names, ks_test_names, cvm_test_names, ad_test_names, chi_squared_test_names)
   test_types = c(t_test_types, wilcox_test_types, ks_test_types, cvm_test_types, ad_test_types, chi_squared_test_types)
-  test_descriptions = c(t_test_descriptions, wilcox_test_types, ks_test_types, cvm_test_types, ad_test_types, chi_squared_test_descriptions)
+  test_descriptions = c(t_test_descriptions, wilcox_test_descriptions, 
+                        ks_test_descriptions, cvm_test_descriptions, 
+                        ad_test_descriptions, chi_squared_test_descriptions)
+  
   test_p_values = c(t_test_results, wilcox_test_results, ks_test_results, cvm_test_results, ad_test_results, chi_squared_test_results)
   
   results_tbl = tibble(test_name=test_names, test_type=test_types, test_description=test_descriptions, test_p_value=test_p_values)

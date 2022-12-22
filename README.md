@@ -7,9 +7,14 @@ The parametric tests included in our approach are: T-Test (Paired or UnPaired) a
 
 The non-parametric tests included in our approach are: Kolmogorov-Smirnov Tests, Wilcoxon signed-rank test, Cramer-von Mises Statistic Test, Anderson–Darling Test and the Chi-Squared Test.
 
+The code for the software is located in the src directory.
+The output directory provides examples of the results of running test_distributions.R and test_distributions_of_variables_from_multiple_simulation_runs.R
+
 ## Usage
-test_distribution.R demonstrates how to use the software. 
+src/test_distribution.R demonstrates how to use the software. 
 
 The user is required to provide two samples of numeric data and indicate if the two samples are "paired".
 
 The software provides back the p-value of running all the parametric and non-parametric tests on the data.
+
+For simulation run data in a specified file format the test_distributions_of_variables_from_multiple_simulation_runs.R demonstrates how to quickly test to see if the values of every simulation output from two runs are from different distributions.

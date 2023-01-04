@@ -22,7 +22,7 @@ src/test_distribution.R demonstrates how to use the software.
 The user is required to provide two samples of numeric data and indicate if the two samples are "paired".
 
 The software provides back the p-value of running all the parametric and non-parametric tests on the data.
-
+<code>
   # dummy distribution parameters for sample1 and sample2
   sample1_number_of_observtations <- 50
   sample1_mean <- 0
@@ -44,5 +44,5 @@ The software provides back the p-value of running all the parametric and non-par
   
   # print or view
   print(test_tbl)
-
+</code>
 For simulation run data in a specified file format the test_distributions_of_variables_from_multiple_simulation_runs.R demonstrates how to quickly test to see if the values of every simulation output from two runs are from different distributions.

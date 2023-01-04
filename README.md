@@ -31,8 +31,8 @@ The software provides back the p-value of running all the parametric and non-par
   sample2_number_of_observtations <- 50
   sample2_mean <- 0
   sample2_std_dev <- 2
-  
-  
+</code>  
+<code>   
   sample1_data = rnorm(n = sample1_number_of_observtations, mean = sample1_mean, sd = sample1_std_dev)
   sample2_data = rnorm(n = sample2_number_of_observtations, mean = sample2_mean, sd = sample2_std_dev)
   
@@ -41,7 +41,8 @@ The software provides back the p-value of running all the parametric and non-par
   
   # run the two sample tests and collect results in a table
   test_tbl = test_if_distributions_are_equal(sample1_data, sample2_data, is_the_sample_data_paired)
-  
+</code>
+<code>
   # print or view
   print(test_tbl)
 </code>

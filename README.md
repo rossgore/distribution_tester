@@ -23,4 +23,26 @@ The user is required to provide two samples of numeric data and indicate if the 
 
 The software provides back the p-value of running all the parametric and non-parametric tests on the data.
 
+  # dummy distribution parameters for sample1 and sample2
+  sample1_number_of_observtations <- 50
+  sample1_mean <- 0
+  sample1_std_dev <- 1
+  
+  sample2_number_of_observtations <- 50
+  sample2_mean <- 0
+  sample2_std_dev <- 2
+  
+  
+  sample1_data = rnorm(n = sample1_number_of_observtations, mean = sample1_mean, sd = sample1_std_dev)
+  sample2_data = rnorm(n = sample2_number_of_observtations, mean = sample2_mean, sd = sample2_std_dev)
+  
+  # this variable should be set to push pairedness appropriately to statistical tests
+  is_the_sample_data_paired = FALSE
+  
+  # run the two sample tests and collect results in a table
+  test_tbl = test_if_distributions_are_equal(sample1_data, sample2_data, is_the_sample_data_paired)
+  
+  # print or view
+  print(test_tbl)
+
 For simulation run data in a specified file format the test_distributions_of_variables_from_multiple_simulation_runs.R demonstrates how to quickly test to see if the values of every simulation output from two runs are from different distributions.
